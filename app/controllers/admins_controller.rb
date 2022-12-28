@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
     skip_before_action :check_admin, only: [:create]
-    rescue_from ActiveRecord::RecordNotFound, with: :render_admin_not_found_error
+    # rescue_from ActiveRecord::RecordNotFound, with: :render_admin_not_found_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_admin_invalid_error
 
     def show
@@ -8,7 +8,7 @@ class AdminsController < ApplicationController
         if admin
             render json: admin
         else
-            render json: { message: "Not Logged in" }, status: 404
+            render json: { message: "Not Logged in" }, status: :unauthorized
         end
     end
 

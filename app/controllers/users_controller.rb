@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :check_user, only: [:create]
 
-    rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_error
+    # rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_user_invalid_error
 
     def show
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if user
             render json: user
         else
-            render json: { message: "Not Logged in" }, status: 404
+            render json: { message: "Not Logged in" }, status: :unauthorized
         end
     end
 
