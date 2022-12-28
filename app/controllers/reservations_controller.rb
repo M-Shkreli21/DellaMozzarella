@@ -1,6 +1,8 @@
 class ReservationsController < ApplicationController
+    # skip_before_action :check_user
+    # skip_before_action :check_admin
     rescue_from ActiveRecord::RecordNotFound, with: :render_reservation_not_found_error
-rescue_from ActiveRecord::RecordInvalid, with: :render_reservation_invalid_error
+    rescue_from ActiveRecord::RecordInvalid, with: :render_reservation_invalid_error
 
     def index
         reservations = Reservation.all
@@ -13,18 +15,18 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_reservation_invalid_error
     end
 
     def create
-        new_reservation = Reservation.create!(reservation_params)
+        new_reservation = current_user.reservations.create!(reservation_params)
         render json: new_reservation, status: :created
     end
 
-    def update
-        reservation = find_reservation
-        reservation.update!(reservation_params)
-        render json: reservation, status: :accepted
-    end
+    # def update
+    #     reservation = find_reservation
+    #     reservation.update!(reservation_params)
+    #     render json: reservation, status: :accepted
+    # end
 
     def destroy
-        reservation = find_reservation
+        reservation = current_user.reservations.find(params[:id])
         reservation.destroy
         render json: {}
     end
