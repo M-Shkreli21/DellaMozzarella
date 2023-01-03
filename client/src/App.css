@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+.scroll_parent{
+  overflow-y: scroll;
+  height: 53vh;
+  display: flex;
+  flex-direction: row;
+  text-rendering: optimizeSpeed;
+}
+
+.scroll_images{
+  width:400px;
+  height:350px;
+}
+
+.logo{
+  width: 250px;
+  height: 150px;
+}
+
+.logo_container{
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/255px-Flag_of_Italy.svg.png");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.navLink{
+  padding: 10px;
+  margin-bottom: auto;
+}
+
+.contact_info{
+  width: 900px;
+  height: 670px;
+  outline:auto;
+  margin:auto;
+  align-self: auto;
+}
+
+.Introduction{
+  width: 1000px;
+  height: 650px;
+  text-align: center;
+  margin:auto;
+  outline:auto;
+  align-items: center;
+}
+
+.sidebar{
+  outline:auto;
+  float: left;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  margin: auto;
+}
+
+.ingredients{
+  font-style:italic
+}
+
+.logo2{
+  width:400px;
+  height:300px;
+}
+
+.intro_content{
+  font-weight: bold;
+}

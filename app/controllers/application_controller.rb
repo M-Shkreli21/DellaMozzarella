@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
-  before action :check_user
-  before action :check_admin
+  # before action :check_user
+  # before action :check_admin
   include ActionController::Cookies
 
   def check_user

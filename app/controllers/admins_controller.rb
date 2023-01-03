@@ -1,7 +1,12 @@
 class AdminsController < ApplicationController
-    skip_before_action :check_admin, only: [:create]
+    # skip_before_action :check_admin, only: [:create]
     # rescue_from ActiveRecord::RecordNotFound, with: :render_admin_not_found_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_admin_invalid_error
+
+    def index
+        admins = Admin.all
+        render json: admins
+    end
 
     def show
         admin = Admin.find_by(id: session[:admin_id])
@@ -37,7 +42,7 @@ class AdminsController < ApplicationController
     # end
 
     def admin_params
-        params.permit(:name, :email, :password)
+        params.permit(:username, :email, :password)
     end
 
     # def render_admin_not_found_error
