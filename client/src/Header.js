@@ -33,6 +33,7 @@ function Header() {
                 <NavLink className='navLink' to="/RequestAReservation">Request A Reservation</NavLink>
                 <NavLink className='navLink' to="/MyReservations">My Reservations</NavLink>
                 <NavLink className='navLink' to="/ReservationsAndOrders">Reservations And Orders</NavLink>
+                <NavLink className='navLink' to="/Login">Log In</NavLink>
             </div>
         </div>
     )
