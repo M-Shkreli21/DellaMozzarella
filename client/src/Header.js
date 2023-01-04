@@ -32,7 +32,6 @@ function Header({handleLogout, user, setUser}) {
                 <NavLink className='navLink' to="/ContactUs">Contact Us</NavLink>
                 {user.id ? <><NavLink className='navLink' to="/RequestAReservation">Request A Reservation</NavLink>
                 <NavLink className='navLink' to="/MyReservations">My Reservations</NavLink></> : null}
-                {/* <NavLink className='navLink' to="/ReservationsAndOrders">Reservations And Orders</NavLink> */}
                 {!user.id ? <><NavLink className='navLink' to="/Login">Log In</NavLink>
                 <NavLink className='navLink' to="/SignUp">Sign Up</NavLink></> : null}
             <button className="logout_button" onClick={handleLogout}>Log Out {user.username}</button>

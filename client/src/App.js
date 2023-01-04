@@ -8,13 +8,15 @@ import ContactUs from './ContactUs.js';
 import MyReservations from './MyReservations.js';
 // import ReservationsAndOrders from './ReservationsAndOrders.js';
 import React, { useState, useEffect } from 'react'
-import {Route, useLocation} from 'react-router-dom'
+import {Route, useLocation, useNavigate} from 'react-router-dom'
 import SlideRoutes from 'react-slide-routes'
 import './App.css';
 
 function App() {
 
   const [user, setUser] = useState({})
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/me")
@@ -35,6 +37,7 @@ function App() {
       method: 'DELETE'
     })
     alert("You have been logged out")
+    navigate('/')
   }
 
   function addUser(newUser) {
