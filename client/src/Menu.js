@@ -10,8 +10,7 @@ function Menu(){
         .then(response => response.json())
         .then(data => setMenus(data))
       }, [])
-    console.log(menu)
-
+      
     const menu_render = menu.map((menu) => {
         return <MenuRender key={menu.id} menu={menu}/>
     })

@@ -1,6 +1,5 @@
 class MenuItemsController < ApplicationController
-    # skip_before_action :check_admin, only: [:index, :show]
-    # skip_before_action :check_user, only: [:index, :show]
+    skip_before_action :check_user, only: [:index, :show]
     rescue_from ActiveRecord::RecordNotFound, with: :render_menu_item_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_menu_item_invalid_error
 

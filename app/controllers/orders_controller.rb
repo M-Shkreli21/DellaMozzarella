@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
     # skip_before_action :check_user
-    # skip_before_action :check_admin
     rescue_from ActiveRecord::RecordNotFound, with: :render_order_not_found_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_order_invalid_error
 
@@ -15,18 +14,18 @@ class OrdersController < ApplicationController
     end
 
     def create
-        new_order = current_user.order.create!(order_params)
+        new_order = Order.create!(order_params)
         render json: new_order, status: :created
     end
 
-    # def update
-    #     order = find_order
-    #     order.update!(order_params)
-    #     render json: order, status: :accepted
-    # end
+    def update
+        order = find_order
+        order.update!(order_params)
+        render json: order, status: :accepted
+    end
 
     def destroy
-        order = current_user.order.find(params[:id])
+        order = Order.find(params[:id])
         order.destroy
         render json: {}
     end

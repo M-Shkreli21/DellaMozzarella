@@ -3,6 +3,5 @@ class Reservation < ApplicationRecord
     has_many :users, through: :orders
 
     validates :date, presence: true
-    validates :time, presence: true
     validates :user_id, presence: true
 end

@@ -2,7 +2,6 @@ import React from 'react';
 
 function MenuRender(menu) {
 
-    console.log(menu)
     return(
         <div>
         <h3>{menu.menu.menu_item_name}</h3>

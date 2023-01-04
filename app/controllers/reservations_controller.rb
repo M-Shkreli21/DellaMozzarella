@@ -1,12 +1,16 @@
 class ReservationsController < ApplicationController
     # skip_before_action :check_user
-    # skip_before_action :check_admin
     rescue_from ActiveRecord::RecordNotFound, with: :render_reservation_not_found_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_reservation_invalid_error
 
     def index
+        user = User.find_by(id: session[:user_id])
         reservations = Reservation.all
-        render json: reservations
+        if user
+            render json: user.reservations
+        else
+            render json: { message: "Not Logged in" }, status: :unauthorized
+        end
     end
 
     def show
@@ -15,18 +19,18 @@ class ReservationsController < ApplicationController
     end
 
     def create
-        new_reservation = current_user.reservations.create!(reservation_params)
+        new_reservation = Reservation.create!(reservation_params)
         render json: new_reservation, status: :created
     end
 
-    # def update
-    #     reservation = find_reservation
-    #     reservation.update!(reservation_params)
-    #     render json: reservation, status: :accepted
-    # end
+    def update
+        reservation = find_reservation
+        reservation.update!(reservation_params)
+        render json: reservation, status: :accepted
+    end
 
     def destroy
-        reservation = current_user.reservations.find(params[:id])
+        reservation = Reservations.find(params[:id])
         reservation.destroy
         render json: {}
     end
@@ -38,7 +42,7 @@ class ReservationsController < ApplicationController
     end
 
     def reservation_params
-        params.permit(:date, :time, :user_id, :approved)
+        params.permit(:date, :user_id)
     end
 
     def render_reservation_not_found_error

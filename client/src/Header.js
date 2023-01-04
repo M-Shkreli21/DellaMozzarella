@@ -9,7 +9,7 @@ import FreshMuzz from './IMG-8407.jpg'
 import MakingMuzz from './IMG-8413.MOV'
 import BobosVideo from './IMG-9879.MOV'
 
-function Header() {
+function Header({handleLogout, user, setUser}) {
     return (
         <div className='header'>
             <div className='logo_container'>
@@ -30,10 +30,12 @@ function Header() {
                 <NavLink className='navLink' to="/">Home</NavLink>
                 <NavLink className='navLink' to="/Menu">Menu</NavLink>
                 <NavLink className='navLink' to="/ContactUs">Contact Us</NavLink>
-                <NavLink className='navLink' to="/RequestAReservation">Request A Reservation</NavLink>
-                <NavLink className='navLink' to="/MyReservations">My Reservations</NavLink>
-                <NavLink className='navLink' to="/ReservationsAndOrders">Reservations And Orders</NavLink>
-                <NavLink className='navLink' to="/Login">Log In</NavLink>
+                {user.id ? <><NavLink className='navLink' to="/RequestAReservation">Request A Reservation</NavLink>
+                <NavLink className='navLink' to="/MyReservations">My Reservations</NavLink></> : null}
+                {/* <NavLink className='navLink' to="/ReservationsAndOrders">Reservations And Orders</NavLink> */}
+                {!user.id ? <><NavLink className='navLink' to="/Login">Log In</NavLink>
+                <NavLink className='navLink' to="/SignUp">Sign Up</NavLink></> : null}
+            <button className="logout_button" onClick={handleLogout}>Log Out {user.username}</button>
             </div>
         </div>
     )
