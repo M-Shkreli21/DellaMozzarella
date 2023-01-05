@@ -34,29 +34,29 @@ function Login({user, setUser}) {
 
     if (user && user.id) {
         return (
-            <div>
-                {user.username} is Already Logged In
+            <div className="welcome-message">
+                Welcome to DellaMozzarella {user.username}!
             </div>
         )
     }
 
     return (
         <div>
-            <form onSubmit={handleLogin}>
+            <form className="login_form" onSubmit={handleLogin}>
                 <p style={{color: 'red'}}>{error ? error : null}</p>
 
-                <p>User Login:</p>
+                <h2>User Login:</h2>
 
                 <input
-                    type="text" onChange={handleChangeUsername} value={username} placeholder="Please Enter Username" 
+                    className="login-input" type="text" onChange={handleChangeUsername} value={username} placeholder="Please Enter Username" 
                 />
                 <br></br>
                 <input
-                    type="password" onChange={handleChangePassword} value={password} placeholder="Please Enter Password"
+                    className="login-input" type="password" onChange={handleChangePassword} value={password} placeholder="Please Enter Password"
                 />
                 <br></br>
                 <input 
-                    type="submit" value="Login"
+                    className="button" type="submit" value="Login"
                 />
             </form>
         </div>

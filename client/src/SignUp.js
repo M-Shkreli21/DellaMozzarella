@@ -45,15 +45,15 @@ function Signup({addUser}) {
                 <form onSubmit={submitNewUser}>
                 <p style={{color: 'red'}}>{error ? error : null}</p>
                 <h2>New User Signup</h2>
-                    <input type="text" onChange={addUsername} value={username} placeholder="Enter Username" />
+                    <input className="login-input" type="text" onChange={addUsername} value={username} placeholder="Enter Username" />
                     <br></br>
-                    <input type="text" onChange={addEmail} value={email} placeholder="Enter Email" />
+                    <input className="login-input" type="text" onChange={addEmail} value={email} placeholder="Enter Email" />
                     <br></br>
-                    <input type="text" onChange={addPassword} value={password} placeholder="Enter Password" />
+                    <input className="login-input" type="text" onChange={addPassword} value={password} placeholder="Enter Password" />
                     <br></br>
-                    <input type="text" onChange={addPhoneNumber} value={phoneNumber} placeholder="Enter Phone Number" />
+                    <input className="login-input" type="text" onChange={addPhoneNumber} value={phoneNumber} placeholder="Enter Phone Number" />
                     <br></br>
-                    <input type="submit" value="Signup" />
+                    <input className="button" type="submit" value="Signup" />
                 </form>
             </div>
         </div>

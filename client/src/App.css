@@ -46,7 +46,7 @@
 }
 
 .scroll_images{
-  width:400px;
+  width:500px;
   height:350px;
 }
 
@@ -105,4 +105,91 @@
 
 .intro_content{
   font-weight: bold;
+}
+
+input{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-input{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+select{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.reservations{
+  width: 75%;
+  outline:auto;
+  margin: auto;
+  border-style: solid;
+  padding: 10px;
+}
+
+.reservation_form{
+  width: 30%;
+  height: 50%;
+  padding: 5px;
+  border: auto;
+  border-style: solid;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.new_user_form{
+  width: 30%;
+  height: 50%;
+  padding: 5px;
+  border: auto;
+  border-style: solid;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.login_form{
+  width: 30%;
+  height: 50%;
+  padding: 5px;
+  border: auto;
+  border-style: solid;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.welcome-message{
+  margin-top: 10px;
+  font-style: italic;
 }

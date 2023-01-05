@@ -8,6 +8,7 @@ import FrankieMakingMuzz from './IMG-7540.jpg'
 import FreshMuzz from './IMG-8407.jpg'
 import MakingMuzz from './IMG-8413.MOV'
 import BobosVideo from './IMG-9879.MOV'
+import FrankieCheese from './Frankie Cheese.MOV'
 
 function Header({handleLogout, user, setUser}) {
     return (
@@ -18,9 +19,11 @@ function Header({handleLogout, user, setUser}) {
             <div className='scroll_parent'>
             <img className='scroll_images' src={FrankieMakingMuzz} alt="Frankie Making Muzz" />
             <img className='scroll_images' src={FreshMuzz} alt="Fresh Muzz" />
-            <video className='scroll_images' src={MakingMuzz} width="500" height="400" controls>
+            <video className='scroll_images' src={FrankieCheese} width="600" height="400" controls>
             </video>
-            <video className='scroll_images' src={BobosVideo} width="500" height="400" controls>
+            <video className='scroll_images' src={MakingMuzz} width="600" height="400" controls>
+            </video>
+            <video className='scroll_images' src={BobosVideo} width="600" height="400" controls>
             </video>
             <img className='scroll_images' src={CookingPizza} alt="Frankie Making Pizza" />
             <img className='scroll_images' src={FrankieStanding} alt="Frankie Ready" />
@@ -34,7 +37,7 @@ function Header({handleLogout, user, setUser}) {
                 <NavLink className='navLink' to="/MyReservations">My Reservations</NavLink></> : null}
                 {!user.id ? <><NavLink className='navLink' to="/Login">Log In</NavLink>
                 <NavLink className='navLink' to="/SignUp">Sign Up</NavLink></> : null}
-            <button className="logout_button" onClick={handleLogout}>Log Out {user.username}</button>
+            {user.id ? <button className="logout_button" onClick={handleLogout}>Log Out {user.username}</button> : null}
             </div>
         </div>
     )

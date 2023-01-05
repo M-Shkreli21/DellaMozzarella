@@ -60,6 +60,7 @@ function RequestAReservation({user, setUser}){
     function handleFullOrderSubmit(e) {
         e.preventDefault()
         submitReservation()
+        clearForm()
     }
 
     return(
@@ -68,7 +69,7 @@ function RequestAReservation({user, setUser}){
             <form onSubmit={handleFullOrderSubmit}>
                 <p style={{color: 'red'}}>{error ? error : null}</p>
                 <h2>New Reservation & Order Request</h2>
-                <input type="text" onChange={addDate} value={date} placeholder="Please Enter Date (MM/DD/YYYY)" />
+                <input type="date" onChange={addDate} value={date} placeholder="Please Enter Date (MM/DD/YYYY)" />
                 <br></br>
                 <select name="Select Menu Item" onChange={addItemName} value={itemName}>
                     <option value="All">Please Select a Menu Item</option>
@@ -80,7 +81,7 @@ function RequestAReservation({user, setUser}){
                     <option value="Fried Calamari">Fried Calamari</option>
                 </select>
                 <br></br>
-                <input type="submit" value="Send Reservation Request" />
+                <input className="button" type="submit" value="Send Reservation Request" />
             </form>
         </div>
     </div>

@@ -63,7 +63,6 @@ function App() {
         <Route path="ContactUs" element={<ContactUs/>} />
         <Route path="/RequestAReservation" element={<RequestAReservation user={user} setUser={setUser}/>} />
         <Route path="MyReservations" element={<MyReservations/>} />
-        {/* <Route path="ReservationsAndOrders" element={<ReservationsAndOrders/>} /> */}
         <Route path="Login" element={<Login user={user} setUser={setUser}/>} />
         <Route path="Signup" element={<Signup addUser={addUser}/>} />
       </SlideRoutes>
