@@ -49,7 +49,7 @@ function Signup({addUser}) {
                     <br></br>
                     <input className="login-input" type="text" onChange={addEmail} value={email} placeholder="Enter Email" />
                     <br></br>
-                    <input className="login-input" type="text" onChange={addPassword} value={password} placeholder="Enter Password" />
+                    <input className="login-input" type="password" onChange={addPassword} value={password} placeholder="Enter Password" />
                     <br></br>
                     <input className="login-input" type="text" onChange={addPhoneNumber} value={phoneNumber} placeholder="Enter Phone Number" />
                     <br></br>
